@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restoran Remboelan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            remboelan: {
+              green: '#3A5A40',
+              brown: '#8B4513',
+              cream: '#FAF3E0',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  .about-wrap{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+  }
+  .about-img{ flex:1 1 420px; }
+  .about-text{ flex:1 1 420px; }
+
+  /* supaya tetap rapi di HP */
+  @media (max-width: 768px){
+    .about-wrap{ flex-direction:column; }
+    .about-img, .about-text{ width:100%; }
+  }
+</style>
+</head>
+<body class="font-sans bg-remboelan-cream text-remboelan-brown scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-remboelan-green">Remboelan</h1>
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="#tentang" class="hover:text-remboelan-green">Tentang</a></li>
+        <li><a href="#menu" class="hover:text-remboelan-green">Menu</a></li>
+        <li><a href="#kontak" class="hover:text-remboelan-green">Kontak</a></li>
+      </ul>
+      <button id="btnReservasi" class="bg-remboelan-green text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+        Reservasi
+      </button>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-28 text-center bg-[url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center text-white py-24">
+    <div class="bg-black/50 p-6 inline-block rounded-xl">
+      <h1 class="text-4xl font-bold mb-3">Restoran Remboelan</h1>
+      <p class="italic text-lg">Menyajikan cita rasa Nusantara dengan sentuhan modern dan elegan.</p>
+    </div>
+  </header>
+
+  <!-- ===== TENTANG RESTORAN (gambar kiri, teks kanan) ===== -->
+  <section id="tentang" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-remboelan-green mb-8">
+        Tentang Restoran Remboelan
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Gambar kiri -->
+        <figure class="w-full md:w-1/2">
+          <img
+            src="suasana.jpg"
+            alt="Suasana hangat dan modern khas Restoran Remboelan"
+            class="w-full h-[380px] md:h-[440px] object-cover rounded-xl shadow-lg"
+          >
+          <figcaption class="italic mt-2 text-gray-600 text-sm text-center">
+            Suasana hangat dan modern khas Restoran Remboelan.
+          </figcaption>
+        </figure>
+
+        <!-- Teks kanan -->
+        <div class="w-full md:w-1/2 leading-relaxed text-[17px]">
+          <p>
+            <strong>Remboelan Indonesian Soulfood</strong> adalah restoran khas Indonesia yang menyajikan hidangan Nusantara dengan tampilan modern dan rasa autentik. Berdiri sejak <em>2011</em>, Remboelan menghadirkan pengalaman makan yang elegan dengan cita rasa khas dari berbagai daerah Indonesia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-remboelan-brown mb-3">Menu Remboelan</h2>
+      <p class="italic mb-10 text-gray-600">Pilihan menu autentik dari berbagai penjuru Nusantara.</p>
+
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="nasigorengkencur.png" alt="Nasi Goreng Kencur" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Nasi Goreng Kencur Sei Sapi Teluk Kupang</h4>
+          <p class="italic text-gray-600 my-2">Daging asap khas Kupang dengan aroma kencur yang menggugah selera.</p>
+          <span class="font-bold text-remboelan-green">Rp82.000</span>
+        </div>
+
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="ayambumbuhitam.png" alt="Ayam Bumbu Hitam" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Ayam Bumbu Hitam Cabe Gendot Wonosobo</h4>
+          <p class="italic text-gray-600 my-2">Bumbu hitam gurih pedas khas Wonosobo.</p>
+          <span class="font-bold text-remboelan-green">Rp95.900</span>
+        </div>
+
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="cumisambalmatah.png" alt="Cumi Sambal Matah" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Cumi Sambal Matah Kecombrang Uluwatu</h4>
+          <p class="italic text-gray-600 my-2">Cumi goreng dengan sambal matah segar khas Bali.</p>
+          <span class="font-bold text-remboelan-green">Rp122.400</span>
+        </div>
+
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="guramefillet.png" alt="Gurame Fillet" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Gurame Fillet Sambal Kemangi Mangga Muda</h4>
+          <p class="italic text-gray-600 my-2">Fillet ikan gurame goreng dengan sambal kemangi dan mangga muda.</p>
+          <span class="font-bold text-remboelan-green">Rp183.600</span>
+        </div>
+
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="rotibakar.png" alt="Roti Bakar" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Roti Bakar Nougat Coklat Rindu Malam</h4>
+          <p class="italic text-gray-600 my-2">Roti bakar lembut dengan krim kopi dan nougat.</p>
+          <span class="font-bold text-remboelan-green">Rp68.100</span>
+        </div>
+
+        <div class="bg-remboelan-cream rounded-xl shadow hover:scale-105 transition p-4">
+          <img src="eskopi.png" alt="Es Kopi Gula Malaka" class="rounded-lg mx-auto w-full h-48 object-cover mb-4">
+          <h4 class="font-bold text-lg">Es Kopi Gula Malaka Pangalengan</h4>
+          <p class="italic text-gray-600 my-2">Kopi dingin dengan susu dan gula aren lembut.</p>
+          <span class="font-bold text-remboelan-green">Rp52.800</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multimedia -->
+  <section class="max-w-5xl mx-auto text-center py-16 px-6">
+    <h2 class="text-3xl font-bold text-orange-600 mb-4">Suasana Remboelan</h2>
+    <p class="italic mb-6">Tonton suasana hangat restoran kami dan dengarkan musik pengiring khas Nusantara:</p>
+    <video controls class="mx-auto rounded-xl shadow-lg w-[400px] mb-6">
+      <source src="remboelan.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+  </section>
+
+  <!-- Modal Reservasi -->
+  <div id="modalReservasi" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-8 w-11/12 md:w-1/2 relative shadow-2xl animate-fadeIn">
+      <button id="closeModal" class="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl">&times;</button>
+      <h2 class="text-3xl font-bold text-remboelan-green mb-6 text-center">Formulir Reservasi</h2>
+      <form id="formReservasi" class="space-y-4">
+        <div>
+          <label for="nama" class="block font-semibold">Nama Lengkap:</label>
+          <input id="nama" type="text" required class="w-full p-3 border rounded-md text-remboelan-brown focus:ring-2 focus:ring-remboelan-gold">
+        </div>
+        <div>
+          <label for="tanggal" class="block font-semibold">Tanggal Reservasi:</label>
+          <input id="tanggal" type="date" class="w-full p-3 border rounded-md text-remboelan-brown focus:ring-2 focus:ring-remboelan-gold">
+        </div>
+        <div>
+          <label for="jumlah" class="block font-semibold">Jumlah Orang:</label>
+          <input id="jumlah" type="number" min="1" class="w-full p-3 border rounded-md text-remboelan-brown focus:ring-2 focus:ring-remboelan-gold">
+        </div>
+        <div>
+          <label for="cabang" class="block font-semibold">Pilih Cabang:</label>
+          <select id="cabang" class="w-full p-3 border rounded-md text-remboelan-brown focus:ring-2 focus:ring-remboelan-gold">
+            <option>Jakarta</option>
+            <option>Surabaya</option>
+            <option>Bandung</option>
+          </select>
+        </div>
+        <div>
+          <label for="catatan" class="block font-semibold">Catatan Tambahan:</label>
+          <textarea id="catatan" rows="4" class="w-full p-3 border rounded-md text-remboelan-brown focus:ring-2 focus:ring-remboelan-gold"></textarea>
+        </div>
+        <button id="submitReservasi" type="button" class="w-full bg-remboelan-gold text-remboelan-brown font-semibold py-3 rounded-lg hover:bg-yellow-400 transition">
+          Kirim Reservasi
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="kontak" class="bg-remboelan-brown text-remboelan-cream text-center py-10">
+    <h3 class="text-xl font-bold mb-2">Kontak Remboelan</h3>
+    <p>📍 Plaza Senayan, Jakarta Selatan</p>
+    <p>📞 (021) 5725 088 | 📧 <a href="mailto:info@remboelan.com" class="underline">info@remboelan.com</a></p>
+    <p class="mt-4 text-sm">&copy; 2025 Restoran Remboelan - Indonesian Soulfood</p>
+  </footer>
+
+  <!-- Musik -->
+  <audio id="bgm" src="remboelan.mp3" autoplay loop></audio>
+  <button id="musicBtn" class="fixed bottom-6 right-6 bg-remboelan-green text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition">🎵</button>
+
+  <!-- JS -->
+  <script>
+    const modal = document.getElementById('modalReservasi');
+    const btnReservasi = document.getElementById('btnReservasi');
+    const closeModal = document.getElementById('closeModal');
+
+    btnReservasi.onclick = () => modal.classList.remove('hidden');
+    closeModal.onclick = () => modal.classList.add('hidden');
+    window.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+
+    document.getElementById('submitReservasi').addEventListener('click', () => {
+      alert('Reservasi berhasil dikirim! Terima kasih telah memilih Remboelan 🍽️');
+      modal.classList.add('hidden');
+    });
+
+    // Musik tombol
+    const music = document.getElementById('bgm');
+    const musicBtn = document.getElementById('musicBtn');
+    let musicPlaying = true;
+    musicBtn.onclick = () => {
+      musicPlaying = !musicPlaying;
+      musicBtn.textContent = musicPlaying ? '🔊' : '🔇';
+      musicPlaying ? music.play() : music.pause();
+    };
+
+    // Efek animasi scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('animate-fadeIn');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+  </style>
+</body>
+</html>
